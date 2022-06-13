@@ -1,8 +1,31 @@
-<div class="step-definitions
-            border-2
-            border-indigo-600
-            rounded
-            py-2 px-4">
-  <h3 class="text-3xl font-bold">Steps</h3>
-  <div data-controller="hello"></div>
+<div class="flex
+            gap-4
+            py-6
+            px-8">
+  <div id="gui-editor"
+       data-controller="pipeline-definition"
+       class="border
+              border-indigo-600
+              basis-2/3
+              rounded
+              py-2 px-4">
+    <div class="step-definitions">
+      <h3 class="text-3xl font-bold">Steps</h3>
+      <button class="border-2"
+              data-controller="add-step"
+              data-action="add-step#act">Add step here</button>
+    </div>
+  </div>
+
+  <pre id="yaml"
+       class="border
+              border-indigo-600
+              basis-1/3
+              rounded
+              py-2 px-4">
+    generated yaml goes here
+  </pre>
 </div>
+
+
+<%= render "templates" %>

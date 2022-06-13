@@ -1,0 +1,16 @@
+<template id="tpl-step">
+  <div data-controller="step-definition"
+       class="step-definition">
+    <input type="text"
+           data-pipeline-definition-target="stepName"
+           data-action="change->pipeline-definition#regenerate">
+    <input type="text"
+           data-pipeline-definition-target="stepCommand"
+           data-action="change->pipeline-definition#regenerate">
+  </div>
+
+  <button class="border"
+          data-controller="add-step"
+          data-action="add-step#act">
+    Add Step here</button>
+</template>
