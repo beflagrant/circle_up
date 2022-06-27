@@ -4,6 +4,8 @@
             px-8">
   <div id="gui-editor"
        data-controller="pipeline-definition"
+       data-action="step-definition:stepdragstart->pipeline-definition#revealStepDropZones
+                    step-definition:stepdragend->pipeline-definition#hideStepDropZones"
        class="border
               border-indigo-600
               basis-2/3

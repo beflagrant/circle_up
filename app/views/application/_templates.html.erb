@@ -15,8 +15,10 @@
 
 <template id="tpl-add-or-drop-step">
   <div class="step-drop-target
-              border"
+              border
+              invisible"
        data-controller="step-drop-target"
+       data-step-drop-target-target="dropzone"
        data-action="dragenter->step-drop-target#dragenter
                     dragover->step-drop-target#dragover
                     dragleave->step-drop-target#dragleave

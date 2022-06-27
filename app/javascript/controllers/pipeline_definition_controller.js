@@ -18,6 +18,18 @@ class PipelineDefinitionController extends Controller {
     const yaml_el = document.querySelector('#yaml')
     yaml_el.innerText = yaml
   }
+
+  revealStepDropZones() {
+    document.querySelectorAll('.step-drop-target').forEach((node) => {
+      node.classList.remove('invisible')
+    })
+  }
+
+  hideStepDropZones() {
+    document.querySelectorAll('.step-drop-target').forEach((node) => {
+      node.classList.add('invisible')
+    })
+  }
 }
 
 export default PipelineDefinitionController
