@@ -1,10 +1,13 @@
 import { Controller } from '@hotwired/stimulus'
 import YamlBuilder from '../lib/yaml_builder'
+import {add_or_drop_step_component, step_component} from "../lib/components";
 
 class PipelineDefinitionController extends Controller {
-  static targets = ["stepName", "stepCommand"]
+  static targets = ["stepName", "stepCommand", "stepDefinitions"]
 
-  connect() {}
+  connect() {
+    this.stepDefinitionsTarget.appendChild(add_or_drop_step_component())
+  }
 
   regenerate() {
     const stepDefinitions = this.stepNameTargets.map((nameTarget, idx) =>
