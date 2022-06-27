@@ -1,15 +1,12 @@
 import { Controller } from '@hotwired/stimulus'
+import {add_or_drop_step_component, step_component} from "../lib/components"
 
 class AddStepController extends Controller {
   connect() {}
 
-  new_step_element() {
-    return document.querySelector('#tpl-step').content.cloneNode(true)
-  }
-
   act(event) {
-    let new_step = this.new_step_element()
-    event.target.after(new_step)
+    event.target.after(add_or_drop_step_component())
+    event.target.after(step_component())
   }
 }
 
