@@ -1,4 +1,5 @@
 import { Controller } from '@hotwired/stimulus'
+import {step_component} from "../lib/components";
 
 class StepDropTargetController extends Controller {
   dragenter(event) {
@@ -18,7 +19,12 @@ class StepDropTargetController extends Controller {
 
   drop(event) {
     event.preventDefault()
-    console.log("drop")
+    const data = JSON.parse(event.dataTransfer.getData('application/json'))
+    const { stepName, stepCommand } = data
+    let step = step_component({
+      stepName, stepCommand
+    })
+    event.target.before(step)
   }
 }
 

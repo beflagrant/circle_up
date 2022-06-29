@@ -5,10 +5,14 @@
        data-action="dragstart->step-definition#dragstart
                     dragend->step-definition#dragend">
     <input type="text"
+           class="step-name"
            data-pipeline-definition-target="stepName"
+           data-step-definition-target="stepName"
            data-action="change->pipeline-definition#regenerate">
     <input type="text"
+           class="step-command"
            data-pipeline-definition-target="stepCommand"
+           data-step-definition-target="stepCommand"
            data-action="change->pipeline-definition#regenerate">
   </div>
 </template>
