@@ -1,12 +1,13 @@
 import { Controller } from '@hotwired/stimulus'
 import YamlBuilder from '../lib/yaml_builder'
-import {add_or_drop_step_component, step_component} from "../lib/components";
+import {add_or_drop_step_component, step_component, steps_container_component} from "../lib/components";
 
 class PipelineDefinitionController extends Controller {
   static targets = ["stepName", "stepCommand", "stepDefinitions"]
 
   connect() {
-    this.stepDefinitionsTarget.appendChild(add_or_drop_step_component())
+    const defs = steps_container_component()
+    this.stepDefinitionsTarget.appendChild(defs)
   }
 
   regenerate() {
@@ -20,18 +21,6 @@ class PipelineDefinitionController extends Controller {
 
     const yaml_el = document.querySelector('#yaml')
     yaml_el.innerText = yaml
-  }
-
-  revealStepDropZones() {
-    document.querySelectorAll('.step-drop-target').forEach((node) => {
-      node.classList.remove('invisible')
-    })
-  }
-
-  hideStepDropZones() {
-    document.querySelectorAll('.step-drop-target').forEach((node) => {
-      node.classList.add('invisible')
-    })
   }
 }
 

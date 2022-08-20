@@ -4,21 +4,17 @@ import {step_component} from "../lib/components";
 class StepDropTargetController extends Controller {
   dragenter(event) {
     event.preventDefault()
-    console.log("enter")
-  }
-
-  dragover(event) {
-    event.preventDefault()
-    console.log("over")
+    this.element.classList.add('border-4', 'border-red-600')
   }
 
   dragleave(event) {
     event.preventDefault()
-    console.log("leave")
+    this.element.classList.remove('border-4', 'border-red-600')
   }
 
   drop(event) {
     event.preventDefault()
+    console.log(event)
     const data = JSON.parse(event.dataTransfer.getData('application/json'))
     const { stepName, stepCommand } = data
     let step = step_component({

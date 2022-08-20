@@ -15,7 +15,6 @@ class StepDefinitionController extends Controller {
 
   dragend(event) {
     this.dispatch('stepdragend')
-    this.element.remove()
   }
 }
 

@@ -1,3 +1,14 @@
+<template id="tpl-steps-container">
+  <div class="steps-container"
+       data-controller="steps-container"
+       data-action="step-definition:stepdragstart->steps-container#revealStepDropZones
+                            step-definition:stepdragend->steps-container#hideStepDropZones"
+  >
+    <h3 class="text-2xl font-bold">Steps</h3>
+  </div>
+</template>
+
+
 <template id="tpl-step">
   <div data-controller="step-definition"
        class="step-definition"
@@ -24,7 +35,6 @@
        data-controller="step-drop-target"
        data-step-drop-target-target="dropzone"
        data-action="dragenter->step-drop-target#dragenter
-                    dragover->step-drop-target#dragover
                     dragleave->step-drop-target#dragleave
                     drop->step-drop-target#drop">
     droppy here
